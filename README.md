@@ -22,8 +22,8 @@
 ### Install ⬇️
 
 ```bash
-> git clone https://github.com/justpiple/whatsapp-bot/
-> cd whatsapp-bot
+> git clone https://github.com/Whatsapp124w/exkriment/
+> cd exkriment
 > npm i
 ```
 ### For termux users before running the above command write this command
