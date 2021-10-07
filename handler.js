@@ -735,7 +735,7 @@ module.exports = handle = (client, Client) => {
             if(data.mentionedJidList.length == 0) return data.reply(`Kirim perintah *${data.prefix}${data.command} [ @tag ]*\nContoh : ${data.prefix}${data.command} @0`)
             client.groupDemoteAdmin(data.from, data.mentionedJidList).then(() => data.reply(`Perintah diterima, menghapus admin @${data.mentionedJidList.join(' @').replace(/@s.whatsapp.net/g, '')}`)).catch(() => data.reply('Gagal!'))
         })
-        Client.cmd.on('удалить', async (data) => {
+        Client.cmd.on('kick', async (data) => {
             if(isLimit(data.sender)) return data.reply(mess.limit)
             if(!data.isGroup) return data.reply(mess.group)
             if(!data.isAdmin) return data.reply(mess.admin)
@@ -743,7 +743,7 @@ module.exports = handle = (client, Client) => {
             if(data.mentionedJidList.length == 0) return data.reply(`Kirim perintah *${data.prefix}${data.command} [ @tag ]*\nContoh : ${data.prefix}${data.command} @0`)
             data.mentionedJidList.forEach(async jid =>{ client.groupRemove(data.from, [jid]).then(x => data.reply(`Sukses kick @${jid.split('@')[0]}`)).catch(x => data.reply(`Gagal kick @${jid.split('@')[0]}`)); await sleep(2000)})
         })
-        Client.cmd.on('добавить', async (data) => {
+        Client.cmd.on('add', async (data) => {
             if(isLimit(data.sender)) return data.reply(mess.limit)
             if(!data.isGroup) return data.reply(mess.group)
             if(!data.isAdmin) return data.reply(mess.admin)
